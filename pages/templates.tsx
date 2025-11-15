@@ -1,6 +1,15 @@
 import TemplateCard from '../components/TemplateCard';
 import { FiUpload, FiPlus, FiGrid, FiList } from 'react-icons/fi';
 
+const templates = [
+  { title: "Futuristic Portfolio", imageSrc: "https://picsum.photos/seed/1/400/300" },
+  { title: "Minimalist Design", imageSrc: "https://picsum.photos/seed/2/400/300" },
+  { title: "Creative Agency", imageSrc: "https://picsum.photos/seed/3/400/300" },
+  { title: "Developer Showcase", imageSrc: "https://picsum.photos/seed/4/400/300" },
+  { title: "Photographer's Gallery", imageSrc: "https://picsum.photos/seed/5/400/300" },
+  { title: "UX/UI Case Study", imageSrc: "https://picsum.photos/seed/6/400/300" },
+];
+
 export default function TemplatesPage() {
   return (
     <>
@@ -64,12 +73,9 @@ export default function TemplatesPage() {
           <p className="text-gray-500 text-sm">Handcrafted designs with futuristic aesthetics</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <TemplateCard />
-          <TemplateCard />
-          <TemplateCard />
-          <TemplateCard />
-          <TemplateCard />
-          <TemplateCard />
+          {templates.map((template) => (
+            <TemplateCard key={template.title} title={template.title} imageSrc={template.imageSrc} />
+          ))}
         </div>
       </div>
     </>
