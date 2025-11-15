@@ -1,11 +1,9 @@
-import Header from '../components/Header';
 import TemplateCard from '../components/TemplateCard';
 import { FiUpload, FiPlus } from 'react-icons/fi';
 
 export default function TemplatesPage() {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900 px-6 py-8">
-      <Header />
       <div className="mb-8">
         <h2 className="text-2xl font-semibold">Profile Templates</h2>
         <p className="text-gray-500">Select a premium template or create your own to showcase your work</p>
