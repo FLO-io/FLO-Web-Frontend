@@ -16,9 +16,14 @@ export default function TemplateCard({ title, imageSrc }: { title: string; image
           Premium
         </div>
       </div>
-      <h4 className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
-        {title}
-      </h4>
+      <div className="flex flex-col flex-grow">
+        <h4 className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300 mb-2 flex-grow">
+          {title}
+        </h4>
+        <button className="btn-secondary w-full mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Use Template
+        </button>
+      </div>
     </div>
   );
 }
