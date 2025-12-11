@@ -1,43 +1,83 @@
-import Header from '../components/Header';
 import TemplateCard from '../components/TemplateCard';
-import { FiUpload, FiPlus } from 'react-icons/fi';
+import { FiUpload, FiPlus, FiGrid, FiList } from 'react-icons/fi';
+
+const templates = [
+  { title: "Futuristic Portfolio", imageSrc: "https://picsum.photos/seed/1/400/300" },
+  { title: "Minimalist Design", imageSrc: "https://picsum.photos/seed/2/400/300" },
+  { title: "Creative Agency", imageSrc: "https://picsum.photos/seed/3/400/300" },
+  { title: "Developer Showcase", imageSrc: "https://picsum.photos/seed/4/400/300" },
+  { title: "Photographer's Gallery", imageSrc: "https://picsum.photos/seed/5/400/300" },
+  { title: "UX/UI Case Study", imageSrc: "https://picsum.photos/seed/6/400/300" },
+];
 
 export default function TemplatesPage() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900 px-6 py-8">
-      <Header />
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold">Profile Templates</h2>
-        <p className="text-gray-500">Select a premium template or create your own to showcase your work</p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
-          <p className="text-sm text-blue-600 mb-2">TEMPLATE CREATION</p>
-          <div className="flex items-center gap-3 mb-4 text-blue-700">
-            <FiPlus className="text-xl" />
-            <h3 className="text-lg font-semibold">Create Your Own</h3>
-          </div>
-          <p className="text-gray-500 mb-4">Start with a blank canvas and build a unique portfolio that reflects your personal style.</p>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Start Creating →</button>
+    <>
+      {/* Page Header */}
+      <div className="profile-header">
+        <div>
+          <h2 className="text-responsive-xl font-bold text-gray-900 mb-2">Portfolio Templates</h2>
+          <p className="text-gray-600">Select a premium template or create your own to showcase your work.</p>
         </div>
-        <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
-          <p className="text-sm text-blue-600 mb-2">IMPORT OPTION</p>
-          <div className="flex items-center gap-3 mb-4 text-blue-700">
-            <FiUpload className="text-xl" />
-            <h3 className="text-lg font-semibold">Import Template</h3>
-          </div>
-          <p className="text-gray-500 mb-4">Upload your existing design or import from external sources.</p>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Import Now →</button>
+        <div className="flex items-center space-x-2">
+            <button className="p-2 bg-white border border-gray-200 rounded-xl text-gray-600 hover:bg-gray-100">
+                <FiList />
+            </button>
+            <button className="p-2 bg-blue-600 text-white rounded-xl">
+                <FiGrid />
+            </button>
         </div>
       </div>
-      <h3 className="text-lg font-semibold mb-1">Premium Templates</h3>
-      <p className="text-gray-500 mb-4">Handcrafted designs with futuristic aesthetics</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <TemplateCard />
-        <TemplateCard />
-        <TemplateCard />
-        <TemplateCard />
+
+      {/* Creation/Import Section */}
+      <div className="spacing-section">
+        <div className="section-header">
+          <h3 className="section-title">
+            Get Started
+          </h3>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer">
+                <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                        <FiPlus className="text-2xl text-blue-600" />
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600">Create Your Own</h3>
+                    </div>
+                </div>
+                <p className="text-gray-500 mb-4 text-sm">Start with a blank canvas and build a unique portfolio that reflects your personal style.</p>
+                <button className="btn-secondary w-full">Start Creating →</button>
+            </div>
+            <div className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 cursor-pointer">
+                <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                        <FiUpload className="text-2xl text-purple-600" />
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-semibold text-gray-900 group-hover:text-purple-600">Import Template</h3>
+                    </div>
+                </div>
+                <p className="text-gray-500 mb-4 text-sm">Upload your existing design or import from external sources.</p>
+                <button className="btn-secondary w-full">Import Now →</button>
+            </div>
+        </div>
       </div>
-    </div>
+
+      {/* Premium Templates Section */}
+      <div className="spacing-section">
+        <div className="section-header">
+          <h3 className="section-title">
+            Premium Templates
+          </h3>
+          <p className="text-gray-500 text-sm">Handcrafted designs with futuristic aesthetics</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {templates.map((template) => (
+            <TemplateCard key={template.title} title={template.title} imageSrc={template.imageSrc} />
+          ))}
+        </div>
+      </div>
+    </>
   );
 }

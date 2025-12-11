@@ -49,6 +49,9 @@ export default function SettingsPage() {
           <p className="text-xs text-gray-300">Your changes have been saved.</p>
         </div>
       </div>
+    <div className="spacing-component">
+      <h1 className="text-responsive-xl font-bold text-blue-600 mb-6">Settings</h1>
+      <p className="text-gray-600">Settings page is under construction.</p>
     </div>
   );
 }
