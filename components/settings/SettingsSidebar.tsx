@@ -24,15 +24,15 @@ export default function SettingsSidebar({ activeTab, setActiveTab }: SettingsSid
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`relative flex items-center gap-3 px-4 py-3 transition-all duration-200 text-left w-full ${isActive
-                                        ? 'bg-blue-50 text-blue-600 font-medium'
-                                        : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
+                                className={`relative flex items-center gap-2.5 px-3 py-2.5 transition-all duration-200 text-left w-full ${isActive
+                                    ? 'bg-blue-50 text-blue-600 font-medium'
+                                    : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
                                     }`}
                             >
                                 {isActive && (
                                     <div className="absolute right-0 top-0 bottom-0 w-1 bg-blue-600 rounded-l-full" />
                                 )}
-                                <Icon className={`text-lg transition-colors ${isActive ? 'text-blue-600' : 'text-gray-400'}`} />
+                                <Icon className={`text-base transition-colors ${isActive ? 'text-blue-600' : 'text-gray-400'}`} />
                                 {tab.label}
                             </button>
                         );
