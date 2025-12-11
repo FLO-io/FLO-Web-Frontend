@@ -15,12 +15,12 @@ export default function ProfileSection({ onSave }: { onSave: () => void }) {
 
     return (
         <div className="space-y-6 animate-fade-in">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 min-h-[400px] relative">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 min-h-[400px] flex flex-col">
                 <h2 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                     <FiUser className="text-gray-700" /> Public Profile
                 </h2>
 
-                <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex flex-col md:flex-row gap-6 items-start flex-1">
                     {/* Avatar Section */}
                     <div className="flex flex-col items-center gap-3 pt-1">
                         <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-2xl font-bold shadow-xl shadow-blue-500/20 ring-4 ring-white">
@@ -62,7 +62,7 @@ export default function ProfileSection({ onSave }: { onSave: () => void }) {
                     </div>
                 </div>
 
-                <div className="absolute bottom-6 right-6">
+                <div className="flex justify-end mt-6 pt-4 border-t border-gray-50">
                     <button
                         onClick={handleSave}
                         disabled={isLoading}

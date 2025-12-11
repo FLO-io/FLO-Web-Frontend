@@ -5,7 +5,6 @@ export default function AppearanceSection() {
     const [darkMode, setDarkMode] = useState(false);
 
     return (
-    return (
         <div className="space-y-6 animate-fade-in">
             <div className="card p-5 md:p-6">
                 <h2 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">

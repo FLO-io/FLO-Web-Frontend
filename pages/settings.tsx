@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Header from '../components/Header';
 import SettingsSidebar from '../components/settings/SettingsSidebar';
 import ProfileSection from '../components/settings/ProfileSection';
 import AppearanceSection from '../components/settings/AppearanceSection';
@@ -19,7 +18,6 @@ export default function SettingsPage() {
   return (
     <div className="page-layout bg-pattern-geometric">
       <div className="layout-container">
-        <Header />
 
         <div className="spacing-component mt-8">
           <h1 className="text-responsive-xl font-bold text-gray-900 mb-2">Settings</h1>
@@ -49,9 +47,6 @@ export default function SettingsPage() {
           <p className="text-xs text-gray-300">Your changes have been saved.</p>
         </div>
       </div>
-    <div className="spacing-component">
-      <h1 className="text-responsive-xl font-bold text-blue-600 mb-6">Settings</h1>
-      <p className="text-gray-600">Settings page is under construction.</p>
     </div>
   );
 }
