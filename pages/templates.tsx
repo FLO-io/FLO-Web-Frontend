@@ -1,4 +1,5 @@
 import TemplateCard from '../components/TemplateCard';
+import { useRouter } from 'next/router';
 import { FiUpload, FiPlus, FiGrid, FiList } from 'react-icons/fi';
 
 const templates = [
@@ -11,6 +12,7 @@ const templates = [
 ];
 
 export default function TemplatesPage() {
+  const router = useRouter();
   return (
     <>
       {/* Page Header */}
@@ -20,12 +22,12 @@ export default function TemplatesPage() {
           <p className="text-gray-600">Select a premium template or create your own to showcase your work.</p>
         </div>
         <div className="flex items-center space-x-2">
-            <button className="p-2 bg-white border border-gray-200 rounded-xl text-gray-600 hover:bg-gray-100">
-                <FiList />
-            </button>
-            <button className="p-2 bg-blue-600 text-white rounded-xl">
-                <FiGrid />
-            </button>
+          <button className="p-2 bg-white border border-gray-200 rounded-xl text-gray-600 hover:bg-gray-100">
+            <FiList />
+          </button>
+          <button className="p-2 bg-blue-600 text-white rounded-xl">
+            <FiGrid />
+          </button>
         </div>
       </div>
 
@@ -37,30 +39,35 @@ export default function TemplatesPage() {
           </h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer">
-                <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                        <FiPlus className="text-2xl text-blue-600" />
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600">Create Your Own</h3>
-                    </div>
-                </div>
-                <p className="text-gray-500 mb-4 text-sm">Start with a blank canvas and build a unique portfolio that reflects your personal style.</p>
-                <button className="btn-secondary w-full">Start Creating →</button>
+          <div className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <FiPlus className="text-2xl text-blue-600" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600">Create Your Own</h3>
+              </div>
             </div>
-            <div className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 cursor-pointer">
-                <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                        <FiUpload className="text-2xl text-purple-600" />
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-semibold text-gray-900 group-hover:text-purple-600">Import Template</h3>
-                    </div>
-                </div>
-                <p className="text-gray-500 mb-4 text-sm">Upload your existing design or import from external sources.</p>
-                <button className="btn-secondary w-full">Import Now →</button>
+            <p className="text-gray-500 mb-4 text-sm">Start with a blank canvas and build a unique portfolio that reflects your personal style.</p>
+            <button className="btn-secondary w-full">Start Creating →</button>
+          </div>
+          <div className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 cursor-pointer">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                <FiUpload className="text-2xl text-purple-600" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-purple-600">Import Template</h3>
+              </div>
             </div>
+            <p className="text-gray-500 mb-4 text-sm">Upload your existing design or import from external sources.</p>
+            <button
+              onClick={() => router.push('/portfolio-preview')}
+              className="btn-secondary w-full"
+            >
+              Import Now →
+            </button>
+          </div>
         </div>
       </div>
 

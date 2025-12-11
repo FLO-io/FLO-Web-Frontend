@@ -1,14 +1,16 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 export default function TemplateCard({ title, imageSrc }: { title: string; imageSrc: string }) {
+  const router = useRouter();
   return (
     <div className="group bg-white p-4 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:shadow-gray-500/10 transition-all duration-300 cursor-pointer">
       <div className="relative overflow-hidden rounded-xl mb-4">
-        <Image 
-          src={imageSrc} 
-          alt={title} 
-          width={400} 
-          height={300} 
+        <Image
+          src={imageSrc}
+          alt={title}
+          width={400}
+          height={300}
           className="object-cover w-full h-48 group-hover:scale-105 transition-transform duration-300"
           data-ai-hint="website portfolio"
         />
@@ -20,8 +22,11 @@ export default function TemplateCard({ title, imageSrc }: { title: string; image
         <h4 className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300 mb-2 flex-grow">
           {title}
         </h4>
-        <button className="btn-secondary w-full mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            Use Template
+        <button
+          onClick={() => router.push('/portfolio-preview')}
+          className="btn-secondary w-full mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          Use Template
         </button>
       </div>
     </div>
